@@ -10,8 +10,21 @@ import SwiftUI
 @main
 struct It_s_HappeningApp: App {
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            TabView {
+                Tab("Settings", systemImage: "gear"){
+                    ContentView()
+                }
+                
+                Tab("List", systemImage: "checklist.checked"){
+                    ContentView()
+                }
+            }
+            
         }
+        
+        
+ 
     }
 }
