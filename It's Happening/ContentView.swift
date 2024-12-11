@@ -20,7 +20,7 @@ struct ContentView: View {
                 Text ("Let's make things happen!")
                     .font(.title2)
                     .fontWeight(.semibold)
-                    .italic()
+                   
                     .foregroundColor(.myOrange)
                 
                 
