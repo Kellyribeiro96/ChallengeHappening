@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct It_s_HappeningApp: App {
@@ -13,18 +14,20 @@ struct It_s_HappeningApp: App {
         
         WindowGroup {
             TabView {
-                Tab("Settings", systemImage: "gear"){
+                Tab("List", systemImage: "checklist.checked"){
                     ContentView()
                 }
                 
-                Tab("List", systemImage: "checklist.checked"){
+                Tab("Settings", systemImage: "gear"){
                     ContentView()
                 }
             }
             
-        }
+        }.modelContainer(for: ToDoTask.self)
         
         
  
     }
 }
+// "Settings", systemImage: "gear"){
+//ContentView()

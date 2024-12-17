@@ -28,11 +28,14 @@ struct AddTaskView: View {
                 }.pickerStyle(.segmented).padding()
                 
                 
-                
-                TextField("Let's Get Things Done!",text: $task)
-                    .padding()
-                    .frame(width: 350, height: 400)
+                VStack{  TextField("Let's Get Things Done!",text: $task)
+                        .padding()
+                    Spacer()
+                    
+                    
+                }.frame(width: 350, height: 400)
                     .background(RoundedRectangle(cornerRadius: 10).fill(taskType == 0 ? .myBabyPink : .myBabyBlue))
+               
                 Spacer()
             }
             .toolbar{
@@ -54,7 +57,9 @@ struct AddTaskView: View {
         dismiss()
     }
     private func saveTask() {
-        nowTasks.append(task)
+        
+        if taskType == 0 { nowTasks.append(task) }
+        else {laterTasks.append(task)}
         dismiss()
     }
 }
